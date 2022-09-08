@@ -1,0 +1,627 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+// vars
+// colors
+$Cyan: hsl(180, 66%, 49%);
+$DarkViolet: hsl(257, 27%, 26%);
+$Red: hsl(0, 87%, 67%);
+$Gray: hsl(0, 0%, 75%);
+$GrayishViolet: hsl(257, 7%, 63%);
+$VeryDarkBlue: hsl(255, 11%, 22%);
+$VeryDarkViolet: hsl(260, 8%, 14%);
+$lightGray: #eff0f5;
+$lightCyan: hsl(179, 56%, 75%);
+
+// header
+
+header {
+  display: flex;
+  flex-flow: column;
+  .navbar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+    @media screen and(max-width:700px) {
+      display: none;
+    }
+    .primary {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      .logo {
+        height: auto;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        li {
+          cursor: pointer;
+          font-size: 1rem;
+          color: $GrayishViolet;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+    .other-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      li {
+        cursor: pointer;
+        font-size: 1rem;
+        color: $GrayishViolet;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: $VeryDarkViolet;
+        }
+        button {
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          border: none;
+          border-radius: 30px;
+          font-size: 1rem;
+          color: white;
+          background: $Cyan;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background: $lightCyan;
+          }
+        }
+      }
+    }
+  }
+  .navMobile {
+    display: none;
+    @media screen and (max-width: 700px) {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      .navLinks {
+        position: absolute;
+        top: -5rem;
+        left: 50%;
+        width: 90%;
+        transform: translateX(-50%);
+        list-style: none;
+        text-align: center;
+        display: none;
+        flex-flow: column;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-radius: 10px;
+        background: $DarkViolet;
+        z-index: 100;
+        li {
+          cursor: pointer;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: white;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $VeryDarkViolet;
+          }
+          button {
+            cursor: pointer;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            color: white;
+            background: $Cyan;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              background: $lightCyan;
+            }
+          }
+        }
+        .divider {
+          border: none;
+          height: 1px;
+          background: rgb(82, 82, 82);
+        }
+      }
+      .hamburger {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+// Hero Section
+.hero {
+  position: relative;
+  // width: 90%;
+  height: 40rem;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  padding: 0 0 0 1.5rem;
+  // margin: 0 auto;
+  padding-left: 6%;
+  // background: rgba(0, 0, 0, 0.068);
+  overflow: hidden;
+  @media screen and(max-width:700px) {
+    flex-flow: column-reverse;
+    margin-bottom: 10rem;
+  }
+  @media screen and (min-width: 1400px) {
+    height: 50rem;
+  }
+  .content {
+    flex-basis: 50%;
+    @media screen and(max-width:700px) {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+    }
+    .heading {
+      font-size: 4.5rem;
+      font-weight: 700;
+      line-height: 1.2em;
+      @media screen and(max-width:700px) {
+        font-size: 2.5rem;
+      }
+    }
+    .caption {
+      max-width: 80%;
+      font-size: 1.2rem;
+      color: $GrayishViolet;
+      @media screen and(max-width:700px) {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+    }
+    .get-started {
+      cursor: pointer;
+      padding: 0.8rem 2.3rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      background: $Cyan;
+      margin-top: 2.5rem;
+      @media screen and(max-width:700px) {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  .image {
+    flex-basis: 50%;
+    // padding: 5rem 0;
+    img {
+      height: 100%;
+      width: 100%;
+      max-width: auto;
+      margin-left: 7rem;
+      @media screen and(max-width:700px) {
+        height: 23rem;
+        width: 31rem;
+        object-fit: contain;
+        margin-left: 9rem;
+      }
+    }
+  }
+}
+
+// shorter
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 7rem;
+  background: $lightGray;
+  .shorter {
+    position: absolute;
+    left: 50%;
+    top: -5rem;
+    transform: translateX(-50%);
+    width: 80%;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: auto;
+    background: url(../images/bg-shorten-desktop.svg) $DarkViolet;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media screen and(max-width:700px) {
+      width: 90%;
+      flex-flow: column;
+      justify-content: space-between;
+      padding: 2rem 1.5rem;
+      background: url(../images/bg-shorten-mobile.svg) $DarkViolet;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 1.1rem 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      background: white;
+      @media screen and(max-width:700px) {
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+      }
+      &::placeholder {
+        color: $Gray;
+      }
+    }
+    .shorten-itBtn {
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem 3rem;
+      border: none;
+      border-radius: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+      color: white;
+      background: $Cyan;
+      transition: all 0.3s ease-in-out;
+      @media screen and(max-width:700px) {
+        padding: 0.6rem 3rem;
+        border-radius: 5px;
+      }
+      &:hover {
+        background: $lightCyan;
+      }
+    }
+    .error {
+      display: none;
+      position: absolute;
+      left: 3.7rem;
+      bottom: 1.5rem;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: $Red;
+      @media screen and(max-width:700px) {
+        bottom: 4.9rem;
+        left: 2rem;
+      }
+    }
+  }
+}
+
+// Short results
+.short-results {
+  background: $lightGray;
+}
+// Statistics
+
+.stats {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 7rem;
+  padding: 5rem 2rem;
+  background: $lightGray;
+  @media screen and(max-width:700px) {
+    text-align: center;
+  }
+  .header {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    .heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      @media screen and(max-width:700px) {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .caption {
+      max-width: 30rem;
+      text-align: center;
+      color: $GrayishViolet;
+    }
+  }
+  .features {
+    position: relative;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    z-index: 10;
+    @media screen and(max-width:700px) {
+      grid-template-columns: 1fr;
+      width: 100%;
+      gap: 7rem;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: 10px;
+      background: $Cyan;
+      z-index: -1;
+      @media screen and(max-width:700px) {
+        width: 10px;
+        height: 80%;
+      }
+    }
+  }
+  .card {
+    position: relative;
+    max-width: 24.5rem;
+    height: fit-content;
+    padding: 6rem 2rem 3rem;
+    border-radius: 10px;
+    background: white;
+    .icon {
+      position: absolute;
+      top: -3rem;
+      left: 2rem;
+      padding: 1.7rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $VeryDarkBlue;
+      @media screen and(max-width:700px) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .heading {
+      font-size: 1.5rem;
+    }
+    .caption {
+      font-size: 0.84rem;
+      margin-top: 1rem;
+      color: $GrayishViolet;
+    }
+    &:nth-of-type(2) {
+      margin-top: 3rem;
+      @media screen and(max-width:700px) {
+        margin-top: 0;
+      }
+    }
+    &:nth-of-type(3) {
+      margin-top: 6rem;
+      @media screen and(max-width:700px) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+// Boosts
+.boost-links {
+  height: 15rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: url(../images/bg-boost-desktop.svg) $DarkViolet;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media screen and(max-width:700px) {
+    background: url(../images/bg-boost-mobile.svg) $DarkViolet;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .heading {
+    font-size: 2.5rem;
+    color: $lightGray;
+    @media screen and(max-width:700px) {
+      text-align: center;
+      font-size: 1.8rem;
+    }
+  }
+  .get-StartedBtn {
+    cursor: pointer;
+    padding: 0.8rem 3.5rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    background: $Cyan;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: $lightCyan;
+    }
+  }
+}
+
+// Footer
+
+footer {
+  height: 20rem;
+  background: $VeryDarkViolet;
+  padding: 1rem;
+  @media screen and(max-width:700px) {
+    height: auto;
+    padding: 2rem;
+  }
+  .footer-content {
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media screen and(max-width:700px) {
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+  }
+  .logo {
+    path {
+      fill: white;
+    }
+  }
+  .Links {
+    span {
+      color: white;
+    }
+  }
+  .Features,
+  .Resources,
+  .Company {
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    li {
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        color: $GrayishViolet;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        a {
+          color: $Cyan;
+        }
+      }
+    }
+  }
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    svg {
+      cursor: pointer;
+      path {
+        fill: white;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        path {
+          fill: $Cyan;
+        }
+      }
+    }
+  }
+}
+
+.results-container {
+  background: $lightGray;
+  @media screen and(max-width:700px) {
+    padding-top: 2rem;
+  }
+  .short-results {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    width: 80%;
+    margin: auto;
+    @media screen and(max-width:700px) {
+      width: 90%;
+    }
+    .link-container {
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      @media screen and(max-width:700px) {
+        flex-flow: column;
+        align-items: flex-start;
+        padding: 0;
+      }
+      .original-link {
+        font-size: 1.2rem;
+        @media screen and(max-width:700px) {
+          padding: 1rem 1.5rem 0;
+          font-size: 1.1rem;
+        }
+      }
+      .link-divider {
+        display: none;
+        @media screen and(max-width:700px) {
+          display: block;
+          width: 100%;
+          border: none;
+          height: 1px;
+          margin: 0.3rem 0;
+          background: rgb(218, 218, 218);
+        }
+      }
+      .shorten-link {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        @media screen and(max-width:700px) {
+          width: 100%;
+          flex-flow: column;
+          gap: 0.5rem;
+          align-items: flex-start;
+          padding: 0rem 1.5rem 1rem;
+        }
+        .link {
+          font-size: 1rem;
+          color: $Cyan;
+          @media screen and(max-width:700px) {
+            font-size: 1.1rem;
+          }
+        }
+        .copyBtn {
+          cursor: pointer;
+          padding: 0.5rem 1.5rem;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          background: $Cyan;
+          @media screen and(max-width:700px) {
+            width: 100%;
+            padding: 0.7rem 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+// utilities
+
+// input error
+.error-active {
+  input[type="text"] {
+    outline: 3px solid $Red;
+    &::placeholder {
+      color: rgba(255, 0, 0, 0.24) !important;
+    }
+  }
+  .error {
+    display: block !important;
+  }
+}
+.copiedBtn {
+  background: $DarkViolet;
+}
+
+.menu-active {
+  top: 5rem !important;
+  display: flex !important;
+}
